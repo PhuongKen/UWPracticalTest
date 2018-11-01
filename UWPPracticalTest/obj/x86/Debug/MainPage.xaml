@@ -1,0 +1,33 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="UWPPracticalTest.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPPracticalTest"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+                        >
+
+    <ScrollViewer>
+        <StackPanel>
+            <GridView x:ConnectionId='2' ItemsSource="{Binding collection}" x:Name="APIGridView">
+                <GridView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel HorizontalAlignment="Left" Margin="0,0,0,30" Width="450px" BorderBrush="Black">
+                            <TextBlock Name="TitleTextBlock"
+                                       Text="{Binding videoId}" 
+                                       FontSize="20"
+                                       FontWeight="Black"
+                                       Foreground="Black"
+                                       Margin="33,0,0,20"/>
+                            <TextBlock  Text="{Binding name}" TextWrapping="Wrap" FontSize="13px" Width="380px"/>
+                            <TextBlock  Text="{Binding description}" TextWrapping="Wrap" FontSize="13px" Height="320px" Width="380px"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+            </GridView>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
+
